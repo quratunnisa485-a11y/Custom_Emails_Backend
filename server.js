@@ -34,6 +34,11 @@ db.connect((err) => {
   }
 });
 
+// ===== Root route for Railway test =====
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running successfully on Railway 🚀");
+});
+
 // ===== Routes =====
 app.use("/customemail", customEmailController(db));
 app.post("/login", loginController(db));
@@ -152,5 +157,5 @@ app.use("/api/dashboard", dashboardController);
 // ===== Start Server =====
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
