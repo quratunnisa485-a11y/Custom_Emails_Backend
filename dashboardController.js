@@ -1,13 +1,14 @@
 
 const express = require("express");
 const router = express.Router();
-const mysql = require("mysql");
+const mysql = require("mysql2");
 
 const db = mysql.createConnection({
-  host: "localhost",
+  host: "turntable.proxy.rlwy.net",
+  port: 57087,
   user: "root",
-  password: "",
-  database: "emailmanagementsystem",
+  password: "jFeSaqOCKdgwUQurNkNvEvdRfLKEBKij", // ✅ Your actual password
+  database: "railway"
 });
 
 router.get("/total-users", (req, res) => {
